@@ -55,7 +55,7 @@ List of models:
 - Galmieux/bart_disfl_qa
 - Galmieux/flan_t5_disfl_qa
 - Galmieux/t5_disfl_qa
-- 
+  
 ```
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
@@ -74,11 +74,14 @@ corrected_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
 print(f"Corrected text: {corrected_text}")
 ```
 
-Future Work and Recommendations
+## Future Work and Recommendations
 This project serves as a strong foundation for a robust disfluency correction system. For future development, the following steps are recommended:
 
-Model Training: The Pegasus model was not trained due to compute constraints. The best approach for training this or any larger model would be to use a cloud-based service like Google Cloud Vertex AI or AWS SageMaker, which provides access to more powerful and scalable GPU resources.
+### Model Training
+The Pegasus model was not trained due to compute constraints. The best approach for training this or any larger model would be to use a cloud-based service like Google Cloud Vertex AI or AWS SageMaker, which provides access to more powerful and scalable GPU resources.
 
-Containerization: To ensure the project is fully reproducible and easily deployable, all code and dependencies should be packaged into a Docker container.
+### Containerization 
+To ensure the project is fully reproducible and easily deployable, all code and dependencies should be packaged into a Docker container.
 
-Advanced Evaluation: Incorporate human evaluation to get a more nuanced understanding of the generated text quality, especially for more complex disfluencies where multiple corrections may be valid.
+### Advanced Evaluation 
+Incorporate human evaluation to get a more nuanced understanding of the generated text quality, especially for more complex disfluencies where multiple corrections may be valid.
