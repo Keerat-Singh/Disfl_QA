@@ -19,7 +19,7 @@ The following models were fine-tuned for the disfluency correction task:
 ## Training and Evaluation
 The models were trained using a standard Seq2Seq setup with the prefix correct disfluency: . The performance of each model was evaluated using a comprehensive suite of metrics to measure the quality of the generated text.
 
-##Evaluation Metrics
+### Evaluation Metrics
 The following metrics were used to evaluate the models:
 
 - ROUGE (Recall-Oriented Understudy for Gisting Evaluation): A set of metrics that measure the overlap of n-grams between the generated and reference texts.
@@ -45,7 +45,9 @@ The fine-tuned model checkpoints are hosted on the Hugging Face Hub to handle la
 
 1. Install the Library:
 
-'''pip install transformers'''
+```
+pip install transformers
+```
 
 2. Load the Model and Tokenizer:
 Replace [model_name] with the actual name of your repository on the Hugging Face Hub (e.g., Galmieux/t5_disfl_qa).
@@ -54,19 +56,23 @@ List of models:
 - Galmieux/flan_t5_disfl_qa
 - Galmieux/t5_disfl_qa
 - 
-'''from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+```
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 model_name = "[YOUR_HF_REPO]"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name)'''
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+```
 
 ## Example Usage
-'''text_to_correct = "I, uh, want to know how many, like, planets are there."
+```
+text_to_correct = "I, uh, want to know how many, like, planets are there."
 inputs = tokenizer(text_to_correct, return_tensors="pt")
 outputs = model.generate(inputs.input_ids)
 corrected_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-print(f"Corrected text: {corrected_text}")'''
+print(f"Corrected text: {corrected_text}")
+```
 
 Future Work and Recommendations
 This project serves as a strong foundation for a robust disfluency correction system. For future development, the following steps are recommended:
