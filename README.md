@@ -1,15 +1,15 @@
 # Disfl_QA
 
-##Project Overview
+## Project Overview
 This project focuses on the task of disfluency correction, an important step in preparing spoken language for downstream NLP tasks. Using the Disfl-QA dataset, we fine-tuned several state-of-the-art Transformer-based sequence-to-sequence (Seq2Seq) models to automatically convert disfluent questions into fluent, coherent text.
 
 The primary goal was to evaluate and compare the performance of different models to identify the most effective solution for this task. The code for the project resides here, while the large, fine-tuned models are hosted separately on the Hugging Face Hub.
 
-##Methodology
+## Methodology
 Dataset
 The project utilizes the Disfl-QA dataset, which consists of paired disfluent and fluent questions. The dataset was split into training, validation, and test sets to ensure a robust and unbiased evaluation of the models' performance.
 
-##Models
+## Models
 The following models were fine-tuned for the disfluency correction task:
 
 - BART: A denoising autoencoder model from Facebook AI.
